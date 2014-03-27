@@ -2,7 +2,7 @@ class IdeasController < ApplicationController
 	before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
 	def index
-	  @ideas = Idea.all
+		@ideas = Idea.all
 	end
 
 	def show
@@ -20,7 +20,7 @@ class IdeasController < ApplicationController
 	  @idea = Idea.new(idea_params)
 
     if @idea.save
-			redirect_to @idea, notice: 'Idea was successfully created.'
+			redirect_to '/', notice: 'Idea was successfully created.'
     else
       render action: 'new'
     end
@@ -39,13 +39,12 @@ class IdeasController < ApplicationController
 	  redirect_to ideas_url
 	end
 
-
 	private
 	  def set_idea
 	    @idea = Idea.find(params[:id])
 	  end
 	  
 	  def idea_params
-	    params.require(:idea).permit(:name, :description, :picture)
+	    params.require(:idea).permit(:name, :caption, :picture)
 	  end
 end

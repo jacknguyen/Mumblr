@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-4">
       <p><%= time_ago_in_words(@idea['created_at']) %> ago</p>
-      <p><%= @idea.description %></p>
+      <p><%= @idea.caption %></p>
 
       <% @idea.comments.each do |comment| %>
         <p>
