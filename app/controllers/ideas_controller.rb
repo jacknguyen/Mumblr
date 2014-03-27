@@ -24,7 +24,6 @@ class IdeasController < ApplicationController
     else
       render action: 'new'
     end
-
 	end
 
 	def update
@@ -33,7 +32,6 @@ class IdeasController < ApplicationController
     else
 			render action: 'edit'
     end
-
 	end
 
 	def destroy
@@ -43,7 +41,6 @@ class IdeasController < ApplicationController
 
 
 	private
-
 	  def set_idea
 	    @idea = Idea.find(params[:id])
 	  end
