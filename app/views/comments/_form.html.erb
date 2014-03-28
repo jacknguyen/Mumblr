@@ -16,11 +16,11 @@
 
     <div class="col-sm-6">
       <div class="col-sm-12">
-        <%= f.text_field :user_name, class: "form-control", placeholder: "Username" %><br>
+        <%= f.hidden_field :user_name, placeholder: current_user.username %><br>
       </div>
       
       <div class="col-sm-12">
-        <%= f.text_area :body, class: "form-control", placeholder: "Comment"  %><br>
+        <%= f.text_area :body, class: "form-control", rows: '5', placeholder: "Comment"  %><br>
       </div>
 
       <%= f.hidden_field :idea_id %>

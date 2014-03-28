@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
 	def create
 	  @comment = Comment.new(comment_params)
+	  @comment.user_name = current_user.username
 
     if @comment.save
       redirect_to @comment.idea, notice: 'Comment was successfully created.'

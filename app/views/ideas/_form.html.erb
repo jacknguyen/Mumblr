@@ -1,4 +1,7 @@
-<%= form_for(@idea) do |f| %>
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+  <%= form_for(@idea) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
@@ -10,16 +13,37 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :caption %><br>
-    <%= f.text_area :caption %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br>
+    <%= f.label 'File input' %><br>
     <%= f.file_field :picture %>
   </div>
-  <div class="actions">
+
+  <br>
+
+  <div class="field"> 
+    <%= f.text_area :caption, class: 'form-control', rows: 3, placeholder: 'Caption' %>
+  </div>
+
+  <br>
+  
+  <div>
     <%= f.submit %>
   </div>
+
+
+
 <% end %>
+
+
+</div>
+
+<div class="col-md-3"></div>
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+  <%= link_to ideas_path, class: 'btn btn-lg' do %>
+    <span class='glyphicon glyphicon-arrow-left'></span>
+  <% end %>
+</div>
+<div class="col-md-3"></div>
