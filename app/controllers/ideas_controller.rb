@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
 	before_action :set_idea, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_user!, except: [:index, :show]
 
 	def index
 		@ideas = Idea.all
