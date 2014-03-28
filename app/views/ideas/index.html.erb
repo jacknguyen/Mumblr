@@ -2,9 +2,6 @@
   <div class="col-md-2"></div>
 
   <div class="col-md-8">
-    <%= link_to new_idea_path, class: "btn btn-primary" do %>
-      <span class="glyphicon glyphicon-plus"></span>
-    <% end %>
 
   </div>
 
@@ -15,7 +12,11 @@
   <div class="col-md-2"></div>
 
   <div class="col-md-8">
-  <h1 class='title'>Ideas</h1>
+  <h1 class='title'>Ideas: 
+    <%= link_to new_idea_path, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+  </h1>
     <% @ideas.each do |idea| %>
       <div class='jumbotron'>
         <%= link_to(image_tag(idea.picture.thumb), idea) %>
@@ -23,7 +24,7 @@
         <br>
 
         <%= link_to edit_idea_path(idea), class: 'btn btn-default' do %>
-          <span class="glyphicon glyphicon-pencil"></span>
+          <span class="glyphicon glyphicon-edit"></span>
         <% end %>
 
         <%= link_to idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' do %>

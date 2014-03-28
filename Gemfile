@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 gem 'pg'
+
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 
@@ -14,6 +15,11 @@ gem 'jbuilder', '~> 1.2'
 # picture upload related gems
 gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
+
+gem 'figaro'
+gem 'flickraw'
+
+gem 'devise'
 
 group :doc do
   gem 'sdoc', require: false
