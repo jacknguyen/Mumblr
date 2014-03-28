@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'rails_12factor'
@@ -35,4 +34,5 @@ group :test, :development do
 	gem 'guard-livereload'
 end
 
+ruby '2.0.0'
 

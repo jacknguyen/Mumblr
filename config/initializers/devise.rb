@@ -4,8 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '37bdf331c3fb7dc3108e4216fb8697a09b80071c43577f286c02918835df91c8a6b83d6daca307235b360063933c027393c9f888e5afb514c0a3176f88aa1683'
-
+  config.secret_key = ENV['DEVISE_SECRET']
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -40,12 +39,12 @@ Devise.setup do |config|
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
-  # to authenticate or find a user. Default is :email.
+  # to authenticate or find a user. Default is :username.
   config.case_insensitive_keys = [ :username ]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
-  # modifying a user and when used to authenticate or find a user. Default is :email.
+  # modifying a user and when used to authenticate or find a user. Default is :username.
   config.strip_whitespace_keys = [ :username ]
 
   # Tell if authentication through request.params is enabled. True by default.
@@ -95,7 +94,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'ee332ef7cd6e15a9f18e9829aa49cd5fa781b7de5053397f48af7a730401b826c896d6ac09ffcd88d78b8b8780d0223f1753f0d458317b985e3a3ad9040a0b64'
+  # config.pepper = '0964bec8b5632d53b7054f6af86d9f33533bad20bc4b5293d20d2a9eab03f85eba97167c771fb5b024ee915358e895b5cd747f44ae55c66716e0b0e0a7c668c8'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -135,7 +134,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 2..128 if Rails.env.test? || Rails.env.development?
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
