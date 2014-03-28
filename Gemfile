@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 1.2'
 # picture upload related gems
 gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
+gem 'fog'
 
 gem 'figaro'
 gem 'flickraw'

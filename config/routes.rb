@@ -5,6 +5,6 @@ Mumblr::Application.routes.draw do
 
   resources :comments, only: [:create, :destroy]
   resources :ideas
-  root 'welcome#index'
+  root 'ideas#index'
 
 end

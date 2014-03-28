@@ -1,17 +1,41 @@
-<h2>Sign in</h2>
+<style type="text/css">
+  body {
+    background: url(<%= randomized_background_image %>) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+</style>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="col-md-4"></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+<div class="col-md-4 login">
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <form class="form-horizontal" role="form">
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.text_field :username, placeholder: 'Username', class: 'form-control', autofocus: true %>
+        </div>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %> <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.submit "Sign in", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </form>
+  <% end %>
+
+</div>
+
+<div class="col-md-4"></div>

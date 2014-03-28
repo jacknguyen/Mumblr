@@ -1,21 +1,57 @@
-<h2>Sign up</h2>
+<style type="text/css">
+  body {
+    background: url(<%= randomized_background_image %>) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+</style>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="col-md-4"></div>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+<div class="col-md-4 login">
+  
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <form class="form-horizontal" role="form">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.text_field :username, placeholder: 'Username', class: 'form-control' %>
+        </div>
+      </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.text_field :email, placeholder: 'Email', class: 'form-control' %>
+        </div>
+      </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
+        </div>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.password_field :password_confirmation, placeholder: 'Password Confirm', class: 'form-control' %>
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= f.submit "Sign up", class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </form>
+
+  <% end %>
+
+</div>
+
+<div class="col-md-4"></div>
+
